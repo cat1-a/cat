@@ -34,7 +34,7 @@ P(w∣C)：词项 ww 在类别 C 中的条件概率（通过词频统计 + �
 ## 特征构建过程
 -方法对比
 
-<img src="https://github.com/cat1-a/cat/blob/master/%E5%85%AC%E5%BC%8F3.png" width="200" >
+<img src="https://github.com/cat1-a/cat/blob/master/%E5%85%AC%E5%BC%8F3.png" width="300" >
 
 -核心差异
 高频词：侧重区分高频词与低频词，可能受常见词（如“的”“是”）干扰。
