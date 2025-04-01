@@ -14,15 +14,21 @@
 - 条件概率独立性假设
 多项式朴素贝叶斯假设特征（如词项）在给定类别条件下是相互独立的。即：
 
-<img src="https://github.com/cat1-a/cat/blob/master/%E5%85%AC%E5%BC%8F1.png" width="200" >
+$$
 
+P(w_1, w_2, \dots, w_n \mid C) = \prod_{i=1}^n P(w_i \mid C)
+
+$$
 其中 wi​ 表示词项，C表示类别。尽管现实中词项间存在关联，但这一简化假设显著降低了计算复杂度。
 
 - 贝叶斯定理的应用形式
 对于邮件分类任务，计算后验概率 P(C∣邮件内容)，选择最大概率的类别：
 
-<img src="https://github.com/cat1-a/cat/blob/master/%E5%85%AC%E5%BC%8F2.png" width="200" >
+$$
 
+C_{\text{pred}} = \arg\max_{C} P(C) \prod_{w \in \text{邮件}} P(w \mid C)
+
+$$
 P(C)：类别的先验概率（训练集中类别占比）。
 P(w∣C)：词项 ww 在类别 C 中的条件概率（通过词频统计 + 拉普拉斯平滑计算）。
 
