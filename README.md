@@ -42,7 +42,7 @@ TF-IDF：通过 IDF 降低常见词的权重，更关注类别区分性强的词
 
 ## 高频词/TF-IDF两种特征模式的切换方法
 - 在代码中通过 参数配置 或 条件分支 切换特征提取器，示例如下：
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+$$(from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer)$$
 
 # 配置参数（例如：feature_mode = 'high_freq' 或 'tfidf'）
 $$(feature_mode = 't fidf')$$
