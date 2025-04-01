@@ -15,14 +15,16 @@
 多项式朴素贝叶斯假设特征（如词项）在给定类别条件下是相互独立的。即：
 
 $$P(w_1, w_2, \dots, w_n \mid C) = \prod_{i=1}^n P(w_i \mid C)$$
+
 其中 wi​ 表示词项，C表示类别。尽管现实中词项间存在关联，但这一简化假设显著降低了计算复杂度。
 
 - 贝叶斯定理的应用形式
 对于邮件分类任务，计算后验概率 P(C∣邮件内容)，选择最大概率的类别：
 
 $$C_{\text{pred}} = \mathop{\arg\max}\limits_{C} \left[ P(C) \prod_{w \in \text{邮件}} P(w \mid C) \right]$$
+
 P(C)：类别的先验概率（训练集中类别占比）。
-P(w∣C)：词项 ww 在类别 C 中的条件概率（通过词频统计 + 拉普拉斯平滑计算）。
+P(w∣C)：词项 w 在类别 C 中的条件概率（通过词频统计 + 拉普拉斯平滑计算）。
 
 ## 数据处理流程
 - 分词处理：使用分词工具（如 jieba 中文分词或 nltk.word_tokenize 英文分词）将邮件文本拆分为词项列表。
@@ -54,8 +56,8 @@ $(elif feature_mode == 'tfidf':)$
     $(vectorizer = TfidfVectorizer(max_features=1000))$  # 使用 TF-IDF 加权
 
 # 统一接口训练与预测
-$$(X_train = vectorizer.fit_transform(train_texts)
-X_test = vectorizer.transform(test_texts))$$
+$(X_train = vectorizer.fit_transform(train_texts)
+X_test = vectorizer.transform(test_texts))$
 
 - 关键点
 保持 vectorizer 的接口一致性（fit_transform/transform）。
