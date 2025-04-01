@@ -45,16 +45,16 @@ TF-IDF：通过 IDF 降低常见词的权重，更关注类别区分性强的词
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 # 配置参数（例如：feature_mode = 'high_freq' 或 'tfidf'）
-feature_mode = 'tfidf'
+$$ feature_mode = 't fidf'
 
 if feature_mode == 'high_freq':
     vectorizer = CountVectorizer(max_features=1000)  # 选择 Top 1000 高频词
 elif feature_mode == 'tfidf':
-    vectorizer = TfidfVectorizer(max_features=1000)  # 使用 TF-IDF 加权
+    vectorizer = TfidfVectorizer(max_features=1000)  # 使用 TF-IDF 加权  $$
 
 # 统一接口训练与预测
-X_train = vectorizer.fit_transform(train_texts)
-X_test = vectorizer.transform(test_texts)
+$$ X_train = vectorizer.fit_transform(train_texts)
+X_test = vectorizer.transform(test_texts) $$
 
 - 关键点
 保持 vectorizer 的接口一致性（fit_transform/transform）。
